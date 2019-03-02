@@ -4,12 +4,14 @@ import matplotlib.pyplot as pyplot
 import matplotlib.patches as patches
 import numpy as np
 from PIL import Image
+import sys
 
 w = 450
 h = 100
 
-def boxDraw(imageFile):
+def boxDraw(argv):	
 
+	imageFile = argv
 	img = np.array(Image.open(imageFile),dtype=np.uint8)
 
 	fig,ax = pyplot.subplots(1)
@@ -22,5 +24,6 @@ def boxDraw(imageFile):
 
 	pyplot.show()
 
-boxDraw('idiotest_1.jpg')
+
+boxDraw(sys.argv[1])
 
